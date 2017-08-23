@@ -21,10 +21,33 @@ string = raw_input("Input a string to tokenize")
 def tokenize(string):
     while True:
         token = string.split(" ")
-        if token[0] == "q":
+        command = token[0]
+        num1 = token[1]
+        num2 = token[2]
+        num3 = token[3]
+        if command == "q":
             break
-        elif token[0] == "add":
-            add(token[1], token[2])
+        elif command == "add":
+            add(num1, num2)
+        elif command == "subtract":
+            subtract(num1, num2)
+        elif command == "multiply":
+            multiply(num1, num2)
+        elif command == "divide":
+            divide(num1, num2)
+        elif command == "square":
+            square(num1)
+        elif command == "cube":
+            cube(num1)
+        elif command == "power":
+            power(num1, num2)
+        elif command == "mod":
+            mod(num1, num2)
+        elif command == "add_mult":
+            add_mult(num1, num2, num3)
+        elif command == "add_cubes":
+            add_cubes(num1, num2)
+
 # def add(num1, num2):
 #     """Return the sum of the two input integers."""
 
