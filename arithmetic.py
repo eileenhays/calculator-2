@@ -1,24 +1,39 @@
 """Math functions for calculator."""
 
 
-def add(num1, num2):
+def add(input_list):
     """Return the sum of the two input integers."""
+    sum = 0
+    for number in input_list:
+        if type(number) == int:
+            sum = sum + number
+    return sum
 
-    return int(num1) + int(num2)
-
-
-def subtract(num1, num2):
+def subtract(input_list):
     """Return the second number subtracted from the first."""
 
-    return int(num1) - int(num2)
+    difference = 0
+    for number in input_list:
+        if type(number) == int:
+            difference = difference - number
+    return difference
 
-def multiply(num1, num2):
+def multiply(input_list):
     """Multiply the two inputs together."""
-    return int(num1) * int(num2)
+    product = 0
+    for number in input_list:
+        if type(number) == int:
+            product = product * number
+    return product
 
-def divide(num1, num2):
+
+def divide(input_list):
     """Divide the first input by the second, returning a floating point."""
-    return float(num1) / float(num2)
+    quotient = input_list[0]
+    for number in input_list[1:-1]:
+        if type(number) == int:
+            quotient = quotient / number
+    return quotient
 
 def square(num1):
     """Return the square of the input."""
@@ -36,14 +51,6 @@ def power(num1, num2):
 def mod(num1, num2):
     """Return the remainder of num1 / num2."""
     return int(num1)% int(num2)
-
-def add_mult(num1, num2, num3):
-    """return num1 and num2 added and multiply by num3"""
-    return (int(num1) + int(num2)) * int(num3)
-
-def add_cubes(num1, num2):
-    """Cube both numbers and sum them"""
-    return int(num1) **3 + int(num2)**3
 
 
 # num1 = 10
