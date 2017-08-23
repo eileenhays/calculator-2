@@ -16,41 +16,33 @@ from arithmetic import *
 #         quit
 #     else:
 #         decide which math function to call based on first token
-string = raw_input("Input a string to tokenize")
+# string = raw_input("Input a string to tokenize")
 
 def tokenize(string):
-    while True:
-        token = string.split(" ")
-        print token
-        command = token[0]
-        num1 = token[1]
-        num2 = token[2]
-        if command == "q":
-            break
-        elif command == "+":
-            print add(num1, num2)
-            break
-        elif command == "-":
-            print subtract(num1, num2)
-            break
-        elif command == "*":
-            print multiply(num1, num2)
-            break
-        elif command == "/":
-            print divide(num1, num2)
-            break
-        elif command == "square":
-            print square(num1)
-            break
-        elif command == "cube":
-            print cube(num1)
-            break
-        elif command == "pow":
-            print power(num1, num2)
-            break
-        elif command == "mod":
-            print mod(num1, num2)
-            break
+    token = string.split(" ")
+    print token
+    command = token[0]
+    num1 = token[1]
+    num2 = token[2]
+    if command == "q":
+        quit()
+    elif command == "+":
+        print add(num1, num2)
+    elif command == "-":
+        print subtract(num1, num2)
+    elif command == "*":
+        print multiply(num1, num2)
+    elif command == "/":
+        print divide(num1, num2)
+    elif command == "square":
+        print square(num1)
+    elif command == "cube":
+        print cube(num1)
+    elif command == "pow":
+        print power(num1, num2)
+    elif command == "mod":
+        print mod(num1, num2)
 
-
-tokenize(string)
+while True:
+    string = raw_input("Input a string to tokenize")
+    tokenize(string)
