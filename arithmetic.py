@@ -18,11 +18,10 @@ def subtract(input_list):
 
 def multiply(input_list):
     """Multiply the two inputs together."""
-    product = 0
-    for number in input_list:
+    product = input_list[0]
+    for number in input_list[1:]:
             product = product * number
     return product
-
 
 def divide(input_list):
     """Divide the first input by the second, returning a floating point."""
