@@ -23,6 +23,8 @@ def tokenize(string):
     token = []
     for item in test[1:]:
         token.append(int(item))
+    if len(token) < 1:
+        return token
     command = test[0]
     print token
     if command == "q":
@@ -43,5 +45,5 @@ def tokenize(string):
         print power(token)
 
 while True:
-    string = raw_input("Input a string to tokenize")
+    string = raw_input("Input a string to tokenize ")
     tokenize(string)
