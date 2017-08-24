@@ -22,9 +22,12 @@ def tokenize(string):
     test = string.split(" ")
     token = []
     for item in test[1:]:
-        token.append(int(item))
+        if item.isdigit():
+            token.append(int(item))
+        else:
+            break
     if len(token) < 1:
-        return token
+        print "Give me a command and at least one number, you fool!"
     command = test[0]
     print token
     if command == "q":
@@ -43,7 +46,13 @@ def tokenize(string):
         print cube(token)
     elif command == "pow":
         print power(token)
+    else:
+        print "Give me a command and at least one number, you fool!"
 
 while True:
     string = raw_input("Input a string to tokenize ")
     tokenize(string)
+
+    # '3 + 1'
+    # test = ["3","+","1"]
+    # token = [+, 1]
