@@ -33,26 +33,22 @@ def tokenize(string):
     if command == "q":
         quit()
     elif command == "+":
-        print add(token)
+        print reduce(lambda sum, next_number: sum+next_number, token)
     elif command == "-":
-        print subtract(token)
+        print reduce(lambda difference, next_number: difference-next_number, token)
     elif command == "*":
-        print multiply(token)
+        print reduce(lambda product, next_number: product*next_number, token)
     elif command == "/":
-        print divide(token)
+        print reduce(lambda quotient, next_number: quotient/next_number, token)
     elif command == "square":
         print square(token)
     elif command == "cube":
         print cube(token)
     elif command == "pow":
-        print power(token)
+        print reduce(lambda pow, next_number: pow**next_number, token)
     else:
         print "Give me a command and at least one number, you fool!"
 
 while True:
     string = raw_input("Input a string to tokenize ")
     tokenize(string)
-
-    # '3 + 1'
-    # test = ["3","+","1"]
-    # token = [+, 1]
