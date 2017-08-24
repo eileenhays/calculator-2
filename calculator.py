@@ -19,10 +19,12 @@ from arithmetic import *
 # string = raw_input("Input a string to tokenize")
 
 def tokenize(string):
-    token = string.split(" ")
+    test = string.split(" ")
+    token = []
+    for item in test[1:]:
+        token.append(int(item))
+    command = test[0]
     print token
-    command = token[0]
-    token = int(token[1:-1])
     if command == "q":
         quit()
     elif command == "+":

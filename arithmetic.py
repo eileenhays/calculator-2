@@ -5,24 +5,21 @@ def add(input_list):
     """Return the sum of the two input integers."""
     sum = 0
     for number in input_list:
-        if type(number) == int:
             sum = sum + number
     return sum
 
 def subtract(input_list):
     """Return the second number subtracted from the first."""
 
-    difference = 0
-    for number in input_list:
-        if type(number) == int:
-            difference = difference - number
+    difference = input_list[0]
+    for number in input_list[1:]:
+        difference = difference - number
     return difference
 
 def multiply(input_list):
     """Multiply the two inputs together."""
     product = 0
     for number in input_list:
-        if type(number) == int:
             product = product * number
     return product
 
@@ -30,8 +27,7 @@ def multiply(input_list):
 def divide(input_list):
     """Divide the first input by the second, returning a floating point."""
     quotient = input_list[0]
-    for number in input_list[1:-1]:
-        if type(number) == int:
+    for number in input_list[1:]:
             quotient = quotient / number
     return quotient
 
@@ -39,7 +35,6 @@ def square(input_list):
     """Return the square of the input."""
     square_list = []
     for number in input_list:
-        if type(number) == int:
             square_list.append(number ** 2)
     return square_list
 
@@ -47,15 +42,13 @@ def cube(input_list):
     """Return the cube of the input."""
     cube_list = []
     for number in input_list:
-        if type(number) == int:
             cube_list.append(number ** 3)
     return cube_list
 
 def power(input_list):
     """Raise num1 to the power of num2 and return the value."""
     total = input_list[0]
-    for number in input_list[1:-1]:
-        if type(number) == int:
+    for number in input_list[1:]:
             total = total ** number
     return total
 
