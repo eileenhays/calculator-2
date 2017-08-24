@@ -10,35 +10,37 @@ def my_reduce(command, token):
     if command == "q":
         quit()
     elif command == "+":
-        print add(token)
+        return add(token)
     elif command == "-":
-        print subtract(token)
+        return subtract(token)
     elif command == "*":
-        print multiply(token)
+        return multiply(token)
     elif command == "/":
-        print divide(token)
+        return divide(token)
     elif command == "square":
-        print square(token)
+        return square(token)
     elif command == "cube":
-        print cube(token)
+        return cube(token)
     elif command == "pow":
-        print power(token)
+        return power(token)
     else:
-        print "Give me a command and at least one number, you fool!"
+        return "Give me a command and at least one number, you fool!"
 
 def tokenize(string):
     test = string.split(" ")
     token = []
     for item in test[1:]:
         if item.isdigit():
-            token.append(int(item))
+            token.append(float(item))
         else:
             break
     if len(token) < 1:
         print "Give me a command and at least one number, you fool!"
     command = test[0]
     print token
-    my_reduce(command, token)
+    output = (my_reduce(command, token))
+    # print "output: ", output
+    print "{0:.2f}".format(output)
 
 while True:
     string = raw_input("Input a string to tokenize ")
