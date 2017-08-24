@@ -35,22 +35,33 @@ def divide(input_list):
             quotient = quotient / number
     return quotient
 
-def square(num1):
+def square(input_list):
     """Return the square of the input."""
-    return int(num1) * int(num1)
+    square_list = []
+    for number in input_list:
+        if type(number) == int:
+            square_list.append(number ** 2)
+    return square_list
 
-def cube(num1):
+def cube(input_list):
     """Return the cube of the input."""
-    return int(num1) * int(num1) * int(num1)
+    cube_list = []
+    for number in input_list:
+        if type(number) == int:
+            cube_list.append(number ** 3)
+    return cube_list
 
-def power(num1, num2):
+def power(input_list):
     """Raise num1 to the power of num2 and return the value."""
-    return int(num1) ** int(num2)
+    total = input_list[0]
+    for number in input_list[1:-1]:
+        if type(number) == int:
+            total = total ** number
+    return total
 
-
-def mod(num1, num2):
-    """Return the remainder of num1 / num2."""
-    return int(num1)% int(num2)
+# def mod(input_list):
+#     """Return the remainder of num1 / num2."""
+#     return int(num1)% int(num2)
 
 
 # num1 = 10

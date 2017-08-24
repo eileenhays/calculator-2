@@ -22,26 +22,23 @@ def tokenize(string):
     token = string.split(" ")
     print token
     command = token[0]
-    num1 = token[1]
-    num2 = token[2]
+    token = int(token[1:-1])
     if command == "q":
         quit()
     elif command == "+":
-        print add(num1, num2)
+        print add(token)
     elif command == "-":
-        print subtract(num1, num2)
+        print subtract(token)
     elif command == "*":
-        print multiply(num1, num2)
+        print multiply(token)
     elif command == "/":
-        print divide(num1, num2)
+        print divide(token)
     elif command == "square":
-        print square(num1)
+        print square(token)
     elif command == "cube":
-        print cube(num1)
+        print cube(token)
     elif command == "pow":
-        print power(num1, num2)
-    elif command == "mod":
-        print mod(num1, num2)
+        print power(token)
 
 while True:
     string = raw_input("Input a string to tokenize")
