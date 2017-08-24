@@ -6,17 +6,25 @@ calculator program yourself in this file.
 
 from arithmetic import *
 
-
-# Your code goes here
-# # No setup
-# repeat forever:
-#     read input
-#     tokenize input
-#     if the first token is "q":
-#         quit
-#     else:
-#         decide which math function to call based on first token
-# string = raw_input("Input a string to tokenize")
+def my_reduce(command, token):
+    if command == "q":
+        quit()
+    elif command == "+":
+        print add(token)
+    elif command == "-":
+        print subtract(token)
+    elif command == "*":
+        print multiply(token)
+    elif command == "/":
+        print divide(token)
+    elif command == "square":
+        print square(token)
+    elif command == "cube":
+        print cube(token)
+    elif command == "pow":
+        print power(token)
+    else:
+        print "Give me a command and at least one number, you fool!"
 
 def tokenize(string):
     test = string.split(" ")
@@ -30,25 +38,26 @@ def tokenize(string):
         print "Give me a command and at least one number, you fool!"
     command = test[0]
     print token
-    if command == "q":
-        quit()
-    elif command == "+":
-        print reduce(lambda sum, next_number: sum+next_number, token)
-    elif command == "-":
-        print reduce(lambda difference, next_number: difference-next_number, token)
-    elif command == "*":
-        print reduce(lambda product, next_number: product*next_number, token)
-    elif command == "/":
-        print reduce(lambda quotient, next_number: quotient/next_number, token)
-    elif command == "square":
-        print square(token)
-    elif command == "cube":
-        print cube(token)
-    elif command == "pow":
-        print reduce(lambda pow, next_number: pow**next_number, token)
-    else:
-        print "Give me a command and at least one number, you fool!"
+    my_reduce(command, token)
 
 while True:
     string = raw_input("Input a string to tokenize ")
     tokenize(string)
+
+
+     # if command == "q":
+    #     quit()
+    # elif command == "+":
+    #     print my_reduce(lambda sum, next_number: sum+next_number, token)
+    # elif command == "-":
+    #     print my_reduce(lambda difference, next_number: difference-next_number, token)
+    # elif command == "*":
+    #     print my_reduce(lambda product, next_number: product*next_number, token)
+    # elif command == "/":
+    #     print my_reduce(lambda quotient, next_number: quotient/next_number, token)
+    # elif command == "square":
+    #     print square(token)
+    # elif command == "cube":
+    #     print cube(token)
+    # elif command == "pow":
+    #     print my_reduce(lambda pow, next_number: pow**next_number, token)
