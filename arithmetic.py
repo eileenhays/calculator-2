@@ -3,10 +3,10 @@
 
 def add(input_list):
     """Return the sum of the two input integers."""
-    sum = 0
+    sum_num = 0
     for number in input_list:
-            sum = sum + number
-    return sum
+            sum_num = sum_num + number
+    return sum_num
 
 def subtract(input_list):
     """Return the second number subtracted from the first."""
